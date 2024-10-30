@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Chokokutai&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap');
+
+/* Variáveis de cores e fundo */
+:root {
+  --bg-main: #ffffff; /* Fundo principal */
+  --bg-detail: #000000; /* Fundo de detalhes */
+  --bg-detailbkp: #000000fb; /* Fundo de backup para detalhes */
+  --bg-detailRef: #ffffff; /* Referência de fundo para detalhes */
+  --bg-mainRef: #ffffffd8; /* Referência de fundo principal */
+  --primary-color: #000000; /* Cor primária para o botão */
+}
+
+/* Estilos globais */
+* {
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove preenchimentos */
+  box-sizing: border-box; /* Melhora o controle do layout */
+  font-family: "Roboto", sans-serif;
+}
+/* Estilo do corpo */
+body {
+  height: 100vh; /* Altura total da viewport */
+  background: linear-gradient(120deg, var(--bg-main), var(--bg-detail)); /* Gradiente de fundo */
+  display: flex; /* Flexbox para centralização */
+  flex-direction: column; /* Coloca os itens em coluna */
+  align-items: center; /* Alinha os itens no centro horizontalmente */
+  justify-content: center; /* Alinha os itens no centro verticalmente */
+  position: relative; /* Para posicionar elementos filhos */
+}
+
+/* Estilo do calendário */
+.calendario {
+  border-radius: 10px; /* Bordas arredondadas */
+  background-color: transparent; /* Fundo transparente */
+  box-shadow: 0px 8px 10px rgb(255, 254, 254); /* Sombra do calendário */
+  padding: 20px; /* Preenchimento interno */
+  text-align: center; /* Centraliza o texto dentro do calendário */
+}
+
+/* Estilo do relógio */
+.relogio {
+  display: flex; /* Flexbox para alinhar elementos */
+  align-items: center; /* Alinha verticalmente os itens */
+  justify-content: space-around; /* Espaça os itens uniformemente */
+  height: 170px; /* Altura do relógio */
+  width: 550px; /* Largura do relógio */
+}
+
+/* Estilo de cada elemento do relógio */
+.relogio div {
+  height: 150px; /* Altura dos elementos do relógio */
+  width: 170px; /* Largura dos elementos do relógio */
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Coloca itens em colunhttps://www.educacao.pr.gov.br/iniciar/a */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  color: #ffffff; /* Cor do texto */
+  background-color: rgba(0, 0, 0, 0.9); /* Fundo preto semi-transparente */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); /* Sombra dos elementos */
+  border-radius:10px; /* Bordas arredondadas */
+  letter-spacing: 4px; /* Espaçamento entre letras */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  border: 4px solid rgb(255, 255, 255); /* Borda branca */
+}
+
+/* Efeito ao passar o mouse sobre os elementos do relógio */
+.relogio div:hover {
+  background-color: rgb(0, 0, 0); /* Muda para fundo preto ao passar o mouse */
+  box-shadow: 0 0 20px rgb(255, 255, 255); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Estilo dos spans do relógio */
+.relogio span {
+  font-weight: 600; /* Peso da fonte */
+  font-size: 52px; /* Tamanho da fonte */
+  text-shadow: 1px 1px 5px rgb(255, 255, 255); /* Sombra do texto */
+}
+
+/* Estilo para os spans que mostram o tempo */
+.relogio span.tempo {
+  font-size: 12px; /* Tamanho da fonte para o tempo */
+}
+
+/* Estilo do separador horizontal */
+hr {
+  display: block; /* Exibe como um bloco */
+  height: 1px; /* Altura do separador */
+  border: 0; /* Remove a borda padrão */
+  border-top: 1px solid transparent; /* Remove a borda superior */
+  border-image: linear-gradient(120deg, #5c5318, #3c0909da) 1; /* Gradiente para a borda */
+  padding: 0; /* Remove o preenchimento */
+  margin: 20px 0; /* Margem acima e abaixo */
+}
+
+/* Estilo do rodapé */
+footer {
+  position: absolute; /* Posiciona o rodapé */
+  bottom: 0; /* Fixa no fundo */
+  width: 100%; /* Largura total */
+  height: 2.5rem; /* Altura do rodapé */
+  display: flex; /* Flexbox para centralizar */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Estilo do texto no rodapé */
+footer h3 {
+  font-size: 14px; /* Tamanho da fonte */
+  color: rgba(255, 255, 255, 0.8); /* Cor do texto */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra do texto */
+}
+
+/* Estilo do botão do calendário */
+#calendarioBtn {
+  margin-top: 20px; /* Margem acima do botão */
+  padding: 10px 20px; /* Preenchimento do botão */
+  background-color: var(--primary-color); /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#calendarioBtn:hover {
+  background-color: #666565; /* Muda a cor ao passar o mouse */
+}
+
+/* Estilo do calendário de meses */
+.calendario-mes {
+  display: none; /* Inicialmente escondido */
+  position: absolute; /* Posiciona o calendário em relação ao pai */
+  top: 50px; /* Distância do topo */
+  left: 20px; /* Distância do lado esquerdo */
+  background-color: white; /* Fundo branco */
+  border: 1px solid var(--primary-color); /* Borda com a cor primária */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 15px; /* Preenchimento interno */
+  box-shadow: 0 4px 8px rgb(0, 0, 0); /* Sombra do calendário */
+  z-index: 10; /* Coloca o calendário acima de outros elementos */
+}
+
+/* Estilo do título do calendário */
+.calendario-mes h3 {
+  margin-bottom: 10px; /* Margem abaixo do título */
+}
+
+/* Estilo da lista de meses */
+.calendario-mes ul {
+  list-style: none; /* Remove marcadores da lista */
+}
+
+/* Estilo de cada mês na lista */
+.calendario-mes li {
+  padding: 5px; /* Preenchimento interno */
+  cursor: pointer; /* Muda o cursor ao passar sobre o item */
+  transition: background-color 0.2s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre um mês */
+.calendario-mes li:hover {
+  background-color: var(--primary-color); /* Muda a cor de fundo ao passar o mouse */
+  color: white; /* Muda a cor do texto ao passar o mouse */
+}
+
+/* Estilo para o calendário de meses */
+.calendario-meses {
+  display: none; /* Inicialmente oculto */
+  position: absolute; /* Posiciona o calendário em relação ao pai */
+  top: 50px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+  background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.993); /* Sombra */
+  padding: 15px; /* Espaçamento interno */
+  z-index: 10; /* Coloca o calendário acima de outros elementos */
+}
+
+/* Estilo para a lista de meses */
+#mesesList {
+  list-style-type: none; /* Remove os marcadores da lista */
+}
+
+/* Estilo para cada mês */
+#mesesList li {
+  cursor: pointer; /* Muda o cursor ao passar sobre o item */
+  padding: 5px; /* Espaçamento interno */
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse sobre um mês */
+#mesesList li:hover {
+  background-color: #f0f0f0; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o container de dias */
+.dias-container {
+  margin-top: 20px; /* Espaçamento acima dos dias */
+}
+
+/* Estilo para os dias */
+.dias-container span {
+  display: inline-block; /* Exibe como bloco em linha */
+  margin: 5px; /* Espaçamento entre os dias */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #eee; /* Fundo dos dias */
+  cursor: pointer; /* Muda o cursor ao passar sobre o dia */
+}
+
+/* Efeito ao passar o mouse sobre um dia */
+.dias-container span:hover {
+  background-color: #ccc; /* Muda a cor de fundo ao passar o mouse */
+}

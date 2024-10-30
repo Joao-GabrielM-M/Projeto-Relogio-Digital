@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Relógio Digital</title>
+</head>
+<body>
+  <div class="calendario">
+    <div class="relogio">
+      <div>
+        <span id="ano">0000</span>
+        <span class="tempo">Ano</span>
+      </div>
+      <div>
+        <span id="mes">00</span>
+        <span class="tempo">Mes</span>
+      </div>
+      <div>
+        <span id="dia">00</span>
+        <span class="tempo">Dia</span>
+      </div>
+    </div>
+    <hr>
+    <div class="relogio">
+      <div>
+        <span id="horas">00</span>
+        <span class="tempo">Horas</span>
+      </div>
+      <div>
+        <span id="minutos">00</span>
+        <span class="tempo">Minutos</span>
+      </div>
+      <div>
+        <span id="segundos">00</span>
+        <span class="tempo">Segundos</span>
+      </div>
+    </div>
+    <!-- Botão para abrir o calendário -->
+    <button id="calendarioBtn" onclick="toggleCalendario()">Calendário</button>
+
+    <!-- Container para o calendário -->
+    <div id="calendario" class="calendario-mes" style="display: none;">
+      <div class="mes">
+        <button onclick="selectMonth(0)">Janeiro</button>
+        <button onclick="selectMonth(1)">Fevereiro</button>
+        <button onclick="selectMonth(2)">Março</button>
+        <button onclick="selectMonth(3)">Abril</button>
+        <button onclick="selectMonth(4)">Maio</button>
+        <button onclick="selectMonth(5)">Junho</button>
+        <button onclick="selectMonth(6)">Julho</button>
+        <button onclick="selectMonth(7)">Agosto</button>
+        <button onclick="selectMonth(8)">Setembro</button>
+        <button onclick="selectMonth(9)">Outubro</button>
+        <button onclick="selectMonth(10)">Novembro</button>
+        <button onclick="selectMonth(11)">Dezembro</button>
+      </div>
+      <div id="diasContainer" class="dias-container"></div>
+    </div>
+  </div>
+  
+  <footer>
+    <h3>Desenvolvido por: João Gabriel Martins Miguel e Pedro Paulo De Sá, Estudantes</h3>
+  </footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
